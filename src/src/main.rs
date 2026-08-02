@@ -925,6 +925,9 @@ mod tests {
 
         let mut env = RuntimeEnv::new();
         let result = run_script(src, &mut env);
+        if let Err(err) = &result {
+            println!("script error: {err}");
+        }
         assert!(result.is_ok());
     }
 
